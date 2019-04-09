@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link type="text/css" rel="stylesheet" href="./static/css/cityselect-1.0.0.css" />
+		 <script src="http://roca.zxrtb.com/js/dsp/jquery-1.11.2.min.js"></script>
+	</head>
+	<body>
+	    <div>
+	    	  <div class="citybox">
+	    	  </div>
+	    	  <div class="citybox1" style="margin-top: 30px;">
+          </div>
+	    </div>
+	    <script src="./static/js/jquery.cityselect-1.0.0.js"></script>
+	    <script src="./static/js/jquery.cityselect.data.js"></script>
+	    <script>
+	        console.time('a')
+	        $('.citybox').citySelect({
+	            'data':leftData,
+	            'width':'540px',
+	            'clearable':true,//是否清除
+	            'fold':false,//是否收起列表
+	            'advanced':{
+	                'show':true,
+	                'data':rightData
+	            }
+	        });
+	        console.timeEnd('a')
+	        console.time('b')
+	       $('.citybox1').citySelect({
+                'data':leftData,
+                'width':'540px',
+                'clearable':true,//是否清除
+                'fold':false,//是否收起列表
+                'advanced':{
+                    'show':true,
+                    'data':rightData
+                }
+            });
+	        console.timeEnd('b')
+            
+	    </script>
+	</body>
+</html>
