@@ -4,19 +4,16 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<link type="text/css" rel="stylesheet" href="./static/css/cityselect-1.0.0.css" />
-		 <script src="http://roca.zxrtb.com/js/dsp/jquery-1.11.2.min.js"></script>
 	</head>
-	<body>
-	    <div>
+	<body style="background: #F3F3F3;">
+	    <div style="padding-left: 100px;padding-top: 100px;">
 	    	  <div class="citybox">
 	    	  </div>
-	    	  <div class="citybox1" style="margin-top: 30px;">
-          </div>
 	    </div>
+	    <script src="./static/js/jquery-1.11.2.min.js"></script>
 	    <script src="./static/js/jquery.cityselect-1.0.0.js"></script>
 	    <script src="./static/js/jquery.cityselect.data.js"></script>
 	    <script>
-	        console.time('a')
 	        $('.citybox').citySelect({
 	            'data':leftData,
 	            'width':'540px',
@@ -25,11 +22,12 @@
 	            'advanced':{
 	                'show':true,
 	                'data':rightData
-	            }
+	            },
+	               /*'selectValue':{
+	                'data':{1: "1", 2: "2", 3: "3", 4: "4", 5: "51,50", 6: "79", 7: "60", 9: "89,90", 10: "99", 12: "35", 13: "137", 14: "118", 15: "127", 16: "147,148", 17: "157", 24: "210", 26: "228", 27: "238", 28: "248", 29: "259", 30: "275"},
+	            }*/
 	        });
-	        console.timeEnd('a')
-	        console.time('b')
-	       $('.citybox1').citySelect({
+	       /*$('.citybox1').citySelect({
                 'data':leftData,
                 'width':'540px',
                 'clearable':true,//是否清除
@@ -38,9 +36,7 @@
                     'show':true,
                     'data':rightData
                 }
-            });
-	        console.timeEnd('b')
-            
+            });*/
 	    </script>
 	</body>
 </html>

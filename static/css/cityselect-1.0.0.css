@@ -1,0 +1,193 @@
+.citySelect-item{
+	min-width: 540px;
+	border:1px solid #1ab394;
+	box-sizing: border-box;
+	font-size: 14px;
+	background: #fff;
+}
+.citySelect-item div,
+.citySelect-item span{
+	box-sizing: border-box;
+}
+.citySelect-item .citySelect-select{
+	padding: 5px 5px;
+	width: 100%;
+	min-height:50px;
+	max-height:120px;
+	border-bottom: 1px solid #1ab394;
+	overflow-y: auto;
+}
+.citySelect-item .citySelect-select .citySelect-select-item{
+	position: relative;
+	margin-right: 5px;
+	margin-top: 5px;
+	padding:2px 24px;
+	float: left;
+	border: 1px solid #1ab394;
+	border-radius: 20px;
+	cursor: pointer;
+}
+.citySelect-item .citySelect-select .citySelect-select-item:hover{
+	padding-left:12px;
+	padding-right: 36px;
+}
+.citySelect-item .citySelect-select .citySelect-select-item-remove{
+	display: none;
+	position: absolute;
+	top: 2px;
+	right: 14px;
+	font-weight: 600;
+	color: #333;
+}
+.citySelect-item .citySelect-tab{
+	position: relative;
+	display: table;
+	content: '';
+	clear: both;
+	width: 100%;
+	border-bottom: 2px solid #ccc;
+}
+.citySelect-item .citySelect-tab .citySelect-tab-btn{
+	position: relative;
+	top: 2px;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+.citySelect-item .citySelect-tab .citySelect-tab-btn.active{
+	color: #1AB394;
+	font-weight: 600;
+	border-bottom: 2px solid #1AB394;
+}
+.citySelect-item .citySelect-tab .citySelect-tab-basic,
+.citySelect-item .citySelect-tab .citySelect-tab-advanced{
+	float: left;
+}
+.citySelect-item .citySelect-tab .citySelect-tab-fold{
+	float: right;
+}
+.citySelect-item .citySelect-container{
+	height: 410px;
+	z-index: 20;
+	color: rgb(103, 106, 108);
+	cursor: pointer !important;
+}
+.citySelect-item .citySelect-container .citySelect-container-province,
+.citySelect-item .citySelect-container .citySelect-container-city{
+	float: left;
+	height: 410px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	z-index: 1;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.citySelect-item .citySelect-container .citySelect-container-city{
+	display: none;
+	width: 50%;
+}
+.citySelect-item .citySelect-checkbox:hover{
+	border: 1px solid #1ab394;
+}
+.citySelect-item .citySelect-container-cityitem,
+.citySelect-item .citySelect-container-provinceitem{
+	padding-left: 20px;
+	content: '';
+	display: table;
+	clear: both;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+}
+.citySelect-item .citySelect-container-provinceitem.active{
+	background: #f1f1f5;
+}
+.citySelect-item .citySelect-container-cityitem:hover,
+.citySelect-item .citySelect-container-provinceitem:hover{
+	background: #f1f1f5;
+}
+.citySelect-item .citySelect-container-cityitem:hover,
+.citySelect-item .citySelect-container-provinceitem:hover{
+	background: #f1f1f5;
+}
+.citySelect-item .citySelect-checkbox{
+	position: relative;
+	top: 6px;
+	border: 1px solid #ccc;
+	height: 16px;
+	width: 16px;
+	border-radius: 2px;
+	background: #fff;
+	display: inline-block;
+	cursor: pointer;
+	float: left;
+}
+.citySelect-item .citySelect-container-cityitem-text,
+.citySelect-item .citySelect-container-provinceitem-text{
+	float: left;
+	padding-left: 16px;
+}
+.citySelect-item .citySelect-checkbox.active{
+	border: 1px solid #1AB394;
+	height: 16px;
+	width: 16px;
+	border-radius: 2px;
+	background: #1AB394;
+	display: inline-block;
+}
+.citySelect-item .citySelect-checkbox.active:after{
+	content: '';
+	position: absolute;
+	top: 1px;
+	left: 4px;
+	height: 8px;
+	width: 4px;
+	border-right: 2px solid #fff;
+	border-bottom: 2px solid #fff;
+	transform: rotate(45deg);
+}
+.citySelect-item .citySelect-checkbox.half{
+	background: rgba(26,179,150,0.3);
+	border:1px solid rgba(26,179,150,0.3);
+}
+.citySelect-item .citySelect-checkbox.half:hover{
+	border: 1px solid #1AB394;
+}
+
+
+
+
+.citySelect-item .citySelect-container-advanced{
+		padding-top:5px;
+		height: 410px;
+}
+
+.citySelect-item .citySelect-container-advanced-group{
+	padding-left: 20px;
+	padding-right: 20px;
+	content: '';
+	display: table;
+	clear: both;
+	width: 100%;
+	border-bottom: 1px solid #f3f3f3;
+
+}
+.citySelect-item .citySelect-container-advanced-group:last-child{
+	border:0px;
+}
+.citySelect-item .citySelect-container-advanced-item{
+	padding: 6px 12px;
+	float: left;
+	width: 20%;
+}
+.citySelect-item .citySelect-container-advanced-item:hover{
+	color: #1AB394;
+}
+.citySelect-clear{
+	position: relative;
+	top: 8px;
+	margin-left: 10px;
+	float: left;
+	cursor: pointer;
+	color: #1c84c6;
+	display: inline-block;
+}
