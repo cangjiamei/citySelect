@@ -34,7 +34,6 @@
             function abstract(form_field, options){
                 this.form_field = form_field;
                 this.options = options != null ? options : {};
-                this.options.advanced= options.advanced ? options.advanced : '';
                 this.options.fold= options.fold ? options.fold : false;
                 this.options.width= options.width ? options.width : '540px';
                 //初始化数据
@@ -42,8 +41,12 @@
                 //初始化html内容
                 $(this.form_field).append(this.init());
                 //事件初始化
-                this.basicEvent();
-                this.advancedEvent();
+                if(this.options.hasOwnProperty('data')){
+                		this.basicEvent();
+                }
+                if(this.options.hasOwnProperty('advanced')&&this.options.advanced.data){
+                		this.advancedEvent();
+                }
                 this.initEvent();
                 this.selectEvent();
                 //设置选中的值
@@ -72,7 +75,7 @@
             				}
             			});
             		}
-            		if(this.options.hasOwnProperty('advanced')){
+            		if($options.hasOwnProperty('advanced')&&$options.advanced.data){
             			$options.advanceddata={};
             			$.each($options.advanced.data, function(index,obj) {
             				$.each(obj.container, function(indexsecond,objsecond) {
@@ -151,17 +154,21 @@
             //菜单栏切换
             abstract.prototype.tabHtml=function(){
             		var $this=this,
-        			$option=this.options;
-        			if(!($option.fold)){
+        			$options=this.options;
+        			var advancedTab='';
+        			if($options.hasOwnProperty('advanced')&&$options.advanced.data){
+        				advancedTab='<div class="citySelect-tab-btn citySelect-tab-advanced">快捷选择</div>';
+        			}
+        			if(!($options.fold)){
         				var tabHtml='<div class="citySelect-tab">'+
 				    	                '<div class="citySelect-tab-btn citySelect-tab-basic active">高级选择</div>'+
-				    	                '<div class="citySelect-tab-btn citySelect-tab-advanced">快捷选择</div>'+
+				    	                		advancedTab+
 				    	                '<div class="citySelect-tab-btn citySelect-tab-fold">收起列表</div>'+
 				    	            '</div>';
         			}else{
         				var tabHtml='<div class="citySelect-tab">'+
 				    	                '<div class="citySelect-tab-btn citySelect-tab-basic">高级选择</div>'+
-				    	                '<div class="citySelect-tab-btn citySelect-tab-advanced">快捷选择</div>'+
+				    	                		advancedTab+
 				    	                '<div class="citySelect-tab-btn citySelect-tab-fold active">收起列表</div>'+
 				    	            '</div>';
         			}
@@ -309,7 +316,7 @@
             abstract.prototype.advancedHtml=function(){
             		var $options=this.options,
             			advancedHtml='';
-            		if(this.options.hasOwnProperty('advanced')){
+            		if($options.hasOwnProperty('advanced')){
             			$.each($options.advanced.data, function(index,obj) {
             				advancedHtml=advancedHtml+'<div class="citySelect-container-advanced-group">';
             				var advancedItemHtml='';
@@ -582,7 +589,9 @@
        			if($(this).data('citySelect')){
        				var provinceValue='';
        				for(var key in $(this).data('citySelect').options.getValue){
-       					provinceValue=provinceValue+','+key
+       					if($(this).data('citySelect').options.getValue[key].split(',').length==$(this).data('citySelect').options.provincedata[key].city.length){
+       						provinceValue=provinceValue+','+key
+       					}
        				}
        				return provinceValue.slice(1,provinceValue.length);
        			}

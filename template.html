@@ -15,28 +15,20 @@
 	    <script src="./static/js/jquery.cityselect.data.js"></script>
 	    <script>
 	        $('.citybox').citySelect({
-	            'data':leftData,
+	            'data':basicData,
 	            'width':'540px',
 	            'clearable':true,//是否清除
 	            'fold':false,//是否收起列表
 	            'advanced':{
 	                'show':true,
-	                'data':rightData
-	            },
-	               /*'selectValue':{
-	                'data':{1: "1", 2: "2", 3: "3", 4: "4", 5: "51,50", 6: "79", 7: "60", 9: "89,90", 10: "99", 12: "35", 13: "137", 14: "118", 15: "127", 16: "147,148", 17: "157", 24: "210", 26: "228", 27: "238", 28: "248", 29: "259", 30: "275"},
-	            }*/
+	                'data':advancedData
+	            }
 	        });
-	       /*$('.citybox1').citySelect({
-                'data':leftData,
-                'width':'540px',
-                'clearable':true,//是否清除
-                'fold':false,//是否收起列表
-                'advanced':{
-                    'show':true,
-                    'data':rightData
-                }
-            });*/
+	        $('button').click(function(){
+	          console.log($('.citybox').citySelect().getValue());  
+	          console.log($('.citybox').citySelect().getProvince());  
+	          console.log($('.citybox').citySelect().getCity());  
+	        })
 	    </script>
 	</body>
 </html>

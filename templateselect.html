@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link type="text/css" rel="stylesheet" href="./static/css/cityselect-1.0.0.css" />
+    </head>
+    <body style="background: #F3F3F3;">
+        <div style="padding-left: 100px;padding-top: 100px;">
+              <div class="citybox">
+              </div>
+        </div>
+        <script src="./static/js/jquery-1.11.2.min.js"></script>
+        <script src="./static/js/jquery.cityselect-1.0.0.js"></script>
+        <script src="./static/js/jquery.cityselect.data.js"></script>
+        <script>
+            $('.citybox').citySelect({
+                'data':basicData,
+                'width':'540px',
+                'selectValue':{
+                    data:{
+                        1: "1", 
+                        3: "3", 
+                        11: "109,110,111,112,113,114,115,116,117", 
+                        12: "35,40"
+                    },
+                }
+            });
+        </script>
+    </body>
+</html>
